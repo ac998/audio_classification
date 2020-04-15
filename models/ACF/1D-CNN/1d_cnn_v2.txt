@@ -1,0 +1,47 @@
+MODEL SUMMARY
+Model: "sequential_1"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+conv1d_1 (Conv1D)            (None, 3, 64)             256       
+_________________________________________________________________
+conv1d_2 (Conv1D)            (None, 3, 64)             12352     
+_________________________________________________________________
+max_pooling1d_1 (MaxPooling1 (None, 1, 64)             0         
+_________________________________________________________________
+flatten_1 (Flatten)          (None, 64)                0         
+_________________________________________________________________
+dense_1 (Dense)              (None, 100)               6500      
+_________________________________________________________________
+dense_2 (Dense)              (None, 100)               10100     
+_________________________________________________________________
+dense_3 (Dense)              (None, 2)                 202       
+=================================================================
+Total params: 29,410
+Trainable params: 29,410
+Non-trainable params: 0
+_________________________________________________________________
+
+Optimizer : SGD - lr = 0.05, momentum = 0.7
+
+
+
+Test accuracy = 0.803
+
+CLASSIFICATION REPORT
+              precision    recall  f1-score   support
+
+           0       0.82      0.78      0.80    147849
+           1       0.79      0.83      0.81    143867
+
+    accuracy                           0.80    291716
+   macro avg       0.80      0.80      0.80    291716
+weighted avg       0.80      0.80      0.80    291716
+
+
+FILE PATHS
+Training set : sets_labels/ACF/1hr/clean/train_set.csv
+Testing set : sets_labels/ACF/1hr/clean/test_set.csv
+Weight file : models/ACF/1D-CNN/1d_cnn_v2.hdf5
+Scaler file : models/ACF/1D-CNN/scaler_1d_cnn_v2.sav
+CM plot file : plots/ACF/1D-CNN/1d_cnn_v2.png

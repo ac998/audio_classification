@@ -1,0 +1,55 @@
+MODEL SUMMARY
+Model: "sequential_1"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+conv1d_1 (Conv1D)            (None, 26, 60)            180       
+_________________________________________________________________
+conv1d_2 (Conv1D)            (None, 26, 60)            7260      
+_________________________________________________________________
+max_pooling1d_1 (MaxPooling1 (None, 13, 60)            0         
+_________________________________________________________________
+conv1d_3 (Conv1D)            (None, 13, 80)            9680      
+_________________________________________________________________
+conv1d_4 (Conv1D)            (None, 13, 80)            12880     
+_________________________________________________________________
+flatten_1 (Flatten)          (None, 1040)              0         
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 1040)              0         
+_________________________________________________________________
+dense_1 (Dense)              (None, 200)               208200    
+_________________________________________________________________
+dropout_2 (Dropout)          (None, 200)               0         
+_________________________________________________________________
+dense_2 (Dense)              (None, 4)                 804       
+=================================================================
+Total params: 239,004
+Trainable params: 239,004
+Non-trainable params: 0
+_________________________________________________________________
+
+Optimizer : <keras.optimizers.Adam object at 0x7f6fc519ff98>
+
+
+
+Test accuracy = 0.997
+
+CLASSIFICATION REPORT
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      0.99      1448
+           1       1.00      1.00      1.00      1455
+           2       1.00      1.00      1.00      1507
+           3       1.00      1.00      1.00      1445
+
+    accuracy                           1.00      5855
+   macro avg       1.00      1.00      1.00      5855
+weighted avg       1.00      1.00      1.00      5855
+
+
+FILE PATHS
+Training set : sets_labels/MFCC/1hr/500ms/train_set.csv
+Testing set : sets_labels/MFCC/1hr/500ms/test_set.csv
+Weight file : models/MFCC/1D-CNN/500ms/1d_cnn_v2.hdf5
+Scaler file : models/MFCC/1D-CNN/500ms/scaler_1d_cnn_v2.sav
+CM plot file : plots/MFCC/1D-CNN/500ms/1d_cnn_v2.png
